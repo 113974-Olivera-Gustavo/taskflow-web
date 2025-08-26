@@ -1,0 +1,36 @@
+.navbar-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  padding: 0 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--primary-color);
+  color: white;
+
+  .navbar-left .brand {
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+
+  .navbar-center button {
+    color: white;
+    margin: 0 0.5rem;
+
+    mat-icon {
+      margin-right: 4px;
+    }
+  }
+
+  .navbar-right {
+    display: flex;
+    align-items: center;
+  }
+}
+
+router-outlet {
+  margin-top: 64px; // para que el contenido no quede oculto debajo del navbar
+}

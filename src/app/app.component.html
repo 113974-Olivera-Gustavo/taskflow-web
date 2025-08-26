@@ -1,0 +1,6 @@
+<app-navbar *ngIf="!isLoginPage"></app-navbar>
+
+<!--si no estoy en login, no aplico espaciado por navbar-->
+<div [ngClass]="{ 'main-layout': !isLoginPage }">
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,239 @@
+// Importar Bootstrap
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+// Importar Angular Material theme
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+// Importar Material Icons
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+// Importar Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+// Variables globales
+:root {
+  --primary-color: #1976d2;
+  --secondary-color: #424242;
+  --accent-color: #ff4081;
+  --success-color: #4caf50;
+  --warning-color: #ff9800;
+  --danger-color: #f44336;
+  --light-bg: #f8f9fa;
+  --dark-bg: #343a40;
+}
+
+// Reset y estilos base
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-layout {
+  padding-top: 64px;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: var(--light-bg);
+  color: #333;
+}
+
+// Smooth scrolling
+html {
+  scroll-behavior: smooth;
+}
+
+// Mejoras de accesibilidad
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+  }
+}
+
+// Estilos para formularios
+.form-control {
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  
+  &:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(25, 118, 210, 0.25);
+  }
+}
+
+// Utilidades personalizadas
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.shadow-soft {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-medium {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.shadow-strong {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+// Animaciones de entrada
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideInUp 0.6s ease-out;
+}
+
+.animate-slide-left {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.animate-slide-right {
+  animation: slideInRight 0.6s ease-out;
+}
+
+// Mejoras para Angular Material
+.mat-card {
+  border-radius: 15px !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.mat-raised-button {
+  border-radius: 25px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+}
+
+.mat-stroked-button {
+  border-radius: 25px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  border-width: 2px !important;
+}
+
+// Scrollbar personalizada
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+// Responsive utilities
+.mobile-only {
+  display: none;
+}
+
+.desktop-only {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .mobile-only {
+    display: block;
+  }
+  
+  .desktop-only {
+    display: none;
+  }
+  
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+// Print styles
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-only {
+    display: block !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .mat-card {
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+  }
+}
